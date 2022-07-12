@@ -1,0 +1,21 @@
+.input-container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 80vh;
+    border: palegreen 1px solid;
+    background-color:burlywood;
+}
+
+.input-header{
+    color: rgb(22, 87, 209);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.input-body{
+    color: rgb(32, 5, 5);
+}
