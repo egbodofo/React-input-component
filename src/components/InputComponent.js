@@ -18,10 +18,11 @@ export default class InputComponent extends React.Component {
 
   handleButtonClicked(event) {
     const inputQuery = this.state.inputQuery;
+    const showDateAndTime = alert(new Date());
 
     // Check if input is negative and alert date
     if (inputQuery <= 0) {
-      alert(new Date());
+      showDateAndTime();
     } else {
       alert(inputQuery);
     }
