@@ -1,30 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './InputComponent.css';
-import { useState } from "react";
-  
-export default function InputComponent() {
-  const [text, setText] = useState("");
 
-  const getInput = (t) => {
-    console.log(t);
-    setText(t);
-  };
+export default class InputComponent extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="input-parent-container">
-      <Component getInput={getInput} value={text} />
-      <p className='input-text-output'>{text}</p>
-    </div>
-  );
+    this.state = {
+      inputQuery: ""
+    }
+  }
+
+  handleInputChanged(event) {
+    this.setState({
+      inputQuery: event.target.value
+    });
+  }
+
+  handleButtonClicked(event) {
+    const inputQuery = this.state.inputQuery;
+
+    // Check if input is negative and alert date
+    if (inputQuery <= 0) {
+      alert(new Date());
+    } else {
+      alert(inputQuery);
+    }
+  }
+
+  render() {
+    return  (
+      <div className='input-container'>
+        <p className='input-header'>Note: You can only inout an "Array", a "Negative number" and "Anything else"</p>
+        <input className='input-box' type="text" value={this.state.inputQuery} onChange={this.handleInputChanged.bind(this)}/>
+        <button className='input-button' onClick={this.handleButtonClicked.bind(this)}>
+          Submit
+        </button>
+      </div>
+    );
+  }
 }
-
-const Component = ({ getInput, value }) => {
-  return (
-    <>
-    <div className='input-child-container'>
-      <h1 className='input-child-header'> Type in the box bellow</h1>
-      <input className='input-child-box' type="text" value={value} onChange={(e) => getInput(e.target.value)}></input>
-    </div>
-    </>
-  );
-};
