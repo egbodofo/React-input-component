@@ -1,4 +1,4 @@
-.input-container {
+.input-parent-container {
     display: flex;
     margin: 0 auto;
     flex-direction: column;
@@ -10,12 +10,28 @@
     background-color:burlywood;
 }
 
-.input-header{
-    color: rgb(22, 87, 209);
-    font-size: 1.5rem;
+.input-child-container{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-child-header{
+    color: rgb(228, 105, 105);
+    font-size: 2rem;
     text-transform: capitalize;
 }
 
-.input-body{
+.input-child-box{
     color: rgb(32, 5, 5);
+    font-size: 1.5rem;
+}
+
+.input-text-output{
+    background-color: rgb(236, 173, 173);
+    font-size: 2rem;
+    font-style: italic;
+    text-transform: capitalize;
 }
